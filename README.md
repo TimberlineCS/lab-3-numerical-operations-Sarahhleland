@@ -15,10 +15,10 @@ int i2 = 18;
 
 |  problem | predicted answer  |
 |---|---|
-| 57.2 * (i1 / i2) + 1  |   |
-| 57.2 * ((double)i1 / i2) + 1  |   |
-| 15 – i1 * (d1 * 3) + 4  |  |
-| 15 – i1 * ((int)d1 * 3) + 4  |  |
+| 57.2 * (i1 / i2) + 1  |59.13   |
+| 57.2 * ((double)i1 / i2) + 1  |77.267   |
+| 15 – i1 * (d1 * 3) + 4  |345.1  |
+| 15 – i1 * ((int)d1 * 3) + 4  |4097.2  |
 | 15 – i1 * (int)(d1 * 3) + 4  |  |
 
 - [ ] Print the result to each of the above problems to the console.  Do they match your prediction?
@@ -33,7 +33,29 @@ int i2 = 18;
 | 6789  | 6789 --> 9876  |
 | 1080  | 1080 --> 0801  |
 
+import java.util.Scanner;
+class ReverseNumberWhile
+{
+   public static void main(String args[])
+   {
+      int num=0;
+      int reversenum =0;
+      System.out.println("Input your number and press enter: ");
+      //This statement will capture the user input
+      Scanner in = new Scanner(System.in);
+      //Captured input would be stored in number num
+      num = in.nextInt();
+      //While Loop: Logic to find out the reverse number
+      while( num != 0 )
+      {
+          reversenum = reversenum * 10;
+          reversenum = reversenum + num%10;
+          num = num/10;
+      }
 
+      System.out.println("Reverse of input number is: "+reversenum);
+   }
+}
 
 
 
